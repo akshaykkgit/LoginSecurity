@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <title th:utext="${title}"></title>
+      <link th:href="@{/css/style.css}" href="/css/c.css"  rel="stylesheet" type="text/css"  />
+      <script th:src="@{/js/j.js}"></script>
+   </head>
+    
+   <body>
+  
+    
+      <!-- Include _menu.html -->
+      <th:block th:include="/_menu"></th:block>  
+       
+      <h2>Message : <span th:utext="${message}"></span></h2>
+       
+   </body>
+</html></div>
