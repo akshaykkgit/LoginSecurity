@@ -1,17 +1,22 @@
-<div class="container">
+<div >
 </br></br></br></br>
   <h2>Select  Your Programming Language</h2>
-  <form>
-    <div class="form-group">
+ <form action="#" th:action="@{/submitCodingLanguage}" th:object="${language}" method="post">
+    	<div class="form-group">
+    	
       <label for="sel1">Select list (select one):</label>
-      <select class="form-control" id="sel1">
-        <option>Java</option>
-        <option>C++</option>
+      <select class="form-control" id="sel1" th:field="*{codingLanguage}" >
+          <option value=""> -- </option>
+          <option th:each="entry : ${mapCodingLanguage.entrySet()}"
+                                 th:value="${entry.key}"
+                                 th:utext="${entry.value}">
+          </option>
       </select>
-    </div>
-    <center><button type="button" class="btn btn-outline-success">Submit</button></center>>
+       <input type="submit" value="Submit" /> 
+       <input type="reset" value="Reset" />
+    </form>
+
    
-  </form>
 </div>
 
    

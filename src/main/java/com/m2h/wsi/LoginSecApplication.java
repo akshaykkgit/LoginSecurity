@@ -17,6 +17,7 @@ public class LoginSecApplication extends SpringBootServletInitializer{
 	
 	public static void main(String[] args) {
 		SpringApplication.run(LoginSecApplication.class, args);
+		
 	}
 
 }

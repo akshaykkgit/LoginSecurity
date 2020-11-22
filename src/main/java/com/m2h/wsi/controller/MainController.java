@@ -1,6 +1,9 @@
 package com.m2h.wsi.controller;
 import java.security.Principal;
+import java.util.HashMap;
+import java.util.Map;
 
+import com.m2h.wsi.entity.CodingLanguage;
 import com.m2h.wsi.utils.WebUtils;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.User;
@@ -47,13 +50,15 @@ public class MainController {
  
         // After user login successfully.
         String userName = principal.getName();
- 
         System.out.println("User Name: " + userName);
- 
         User loginedUser = (User) ((Authentication) principal).getPrincipal();
- 
         String userInfo = WebUtils.toString(loginedUser);
         model.addAttribute("userInfo", userInfo);
+        model.addAttribute("language", new CodingLanguage());
+        Map<Long, String> mapCodingLanguage = new HashMap<>();
+        mapCodingLanguage.put((long) 1, "JAVA");
+        mapCodingLanguage.put((long) 2, "C++");
+        model.addAttribute("mapCodingLanguage", mapCodingLanguage);
  
         return "userInfoPage";
     }

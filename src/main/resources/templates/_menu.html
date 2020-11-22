@@ -27,8 +27,11 @@
    <a th:href="@{/admin}" tyle="color:#ffffff" style="color:#ffffff"> Admin</a>
     
      | &nbsp;
+     <form id="login-form" th:action="@{/logout}" method="POST" role="form" style="display: block;">
+     <input type="submit" name="login-submit" id="login-submit"  class="form-control btn btn-login" value="Logout">
+     </form>
       
-   <a th:if="${#request.userPrincipal != null}" th:href="@{/logout}" style="color:#ffffff">Logout</a>
+  
   
 </div>
 
