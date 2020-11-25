@@ -11,8 +11,9 @@ import javax.persistence.Table;
 public class CodingLanguage {
     @Id
 	@GeneratedValue
-	@Column(name = "Id", nullable = false)
+	@Column(name = "id", nullable = false)
 	private long id;
+    @Column(name = "coding_language", nullable = false)
 	private String codingLanguage;
 	public long getId() {
 		return id;

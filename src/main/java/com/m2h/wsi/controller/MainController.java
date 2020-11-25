@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.m2h.wsi.entity.CodingLanguage;
+import com.m2h.wsi.entity.Greeting;
 import com.m2h.wsi.utils.WebUtils;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.User;
@@ -29,6 +30,8 @@ public class MainController {
  
         String userInfo = WebUtils.toString(loginedUser);
         model.addAttribute("userInfo", userInfo);
+        model.addAttribute("code", new CodingLanguage());
+     //   model.addAttribute("greeting", new Greeting());
          
         return "adminPage";
     }
